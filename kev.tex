@@ -1,0 +1,202 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Kevin Lau} \\ \vspace{3pt}
+    \small \raisebox{-0.1\height}\faMapMarker\ Cambridge ~
+    \href{tel:+447311889669}{\raisebox{-0.2\height}\faPhone\  \underline{+44 7311 889669}} ~
+    \href{mailto:kevinlauofficial01@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{kevinlauofficial01@gmail.com}} \\
+    \vspace{1pt}
+    \href{https://linkedin.com/in/kevinlau01}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/kevinlau01}} ~
+    \href{https://github.com/booth-algo}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/booth-algo}}
+    \vspace{-8pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Imperial College London}{Oct 2022 -- Jun 2026}
+{MEng Electronic and Information Engineering (Computer Engineering)}{}
+\resumeSubHeadingListEnd
+
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{DeepWok Lab (Imperial x Cambridge) \href{https://deepwok.github.io/}{\scalebox{0.75}\faLink}}{Jul 2024 -- ongoing}
+{3D Gaussian Splatting Quantisation and Acceleration Hardware}{}
+\resumeItemListStart
+\resumeItem{Developing custom quantised hardware for 3D Gaussian Splatting in SystemVerilog}
+\resumeItem{Implemented quantisation-aware training for 3DGS using PyTorch, achieving similar PSNR benchmarks to the official CUDA implementation}
+\resumeItem{Applied in-house compiler MASE's custom quantisers to evaluate the best quantisation scheme for the hardware}
+\resumeItemListEnd
+
+\resumeSubheading
+{Imperial College London}{Jul -- Sept 2024}
+{University Course FPGA Module Design}{}
+\resumeItemListStart
+\resumeItem{Redesigned the 2nd year Information Processing module teaching content and lab practicals}
+\resumeItem{Introduced concepts of hardware-software codesign and embedded development with Verilog, C++ and Xilinx toolchain usage}
+\resumeItemListEnd
+
+\resumeSubheading
+{Imperial College London}{Oct 2023 -- Mar 2024}
+{Undergraduate Teaching Assistant}{}
+\resumeItemListStart
+\resumeItem{Taught Year 1 students in the EEE department for the Programming for Engineers module}
+\resumeItem{Guided students on learning fundamental C++ concepts and developing object-oriented programming skills}
+\resumeItemListEnd
+
+\resumeSubheading
+{DiTa Limousine Limited \href{https://ditaexpress.com/}{\scalebox{0.75}\faLink}}{Jul -- Sept 2023}
+{Full-stack Web Developer}{}
+\resumeItemListStart
+\resumeItem{Developed a responsive and interactive website using ReactJS and Framer Motion for the company website, which enhanced user engagement and contributed to a 50\% increase in new limousine service bookings}
+\resumeItem{Hosted the website on a self-managed Ubuntu Virtual Private Server, gaining experience with the Linux shell and server management using NGINX}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Graphics Processing Unit (TauriGPU)} \href{https://github.com/AyuubMohamud/TauriGPU}{\scalebox{0.75}\faLink} $|$ \emph{SystemVerilog, Python, GLSL}}{Jul 2024 -- ongoing}
+\resumeItemListStart
+\resumeItem{Developed an open-source programmable GPU compatible with OpenGL ES2 and Xilinx FPGAs}
+\resumeItem{In progress of building an LLVM backend for TauriGPU's ISA to enable GLSL compilation}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Autonomous Balance Bot with Incident Management Platform} \href{https://github.com/TorturedEngineersDept/BalanceBot}{\scalebox{0.75}\faLink} $|$ \emph{Python, ROS 2}}{May -- June 2024}
+\resumeItemListStart
+\resumeItem{Led development of the autonomous navigation and physical incident detection system using SLAM and ROS 2}
+\resumeItem{Developed a Frontier-based exploration algorithm to enable autonomous exploration capabilities in completely unknown dynamic environments}
+\resumeItem{Physically implemented system on a Raspberry Pi 4 with a 2D LiDAR sensor and a camera}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{C90 to RISC-V Compiler} \href{https://github.com/saturn691/ReaverCompiler}{\scalebox{0.75}\faLink} $|$ \emph{C++}}{Dec -- Mar 2024}
+\resumeItemListStart
+\resumeItem{Developed a compiler with advanced features, e.g. N-dimensional array support and efficient memory management}
+\resumeItem{Placed 1st out of 48 teams, achieving 90\% pass rate in seen and unseen test cases}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{FPGA Computer Vision Acceleration for ESP32 WiFi Car Racing System} $|$ \emph{Xilinx, C++}}{Feb -- Mar 2024}
+\resumeItemListStart
+\resumeItem{Built a commercializable hardware racing game with AWS cloud backend and implemented powerups using OpenCV}
+\resumeItem{Developed hardware IPs for local OpenCV acceleration on the PYNQ-Z1 FPGA using the Xilinx toolchain}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Software-Hardware Low Latency Algorithmic Trading System with FPGA} $|$ \emph{Xilinx, Python}}{Feb 2024}
+\resumeItemListStart
+\resumeItem{Top 5 finalist at IC Hack 24's Optiver trading challenge out of 20+ teams, invited to present trading strategy to Optiver representatives}
+\resumeItem{Utilised FPGA to accelerate moving average indicators to identify market opening convergence opportunities using the Xilinx toolchain}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{RISC-V CPU} \href{https://github.com/booth-algo/RISC-V-T24}{\scalebox{0.75}\faLink} $|$ \emph{SystemVerilog, C++, RISC-V Assembly}}{Nov -- Dec 2023}
+\resumeItemListStart
+\resumeItem{Developed a single-cycle RISC-V 32I processor that runs all base instructions using SystemVerilog}
+\resumeItem{Implemented pipelining and direct-mapped cache to improve processing and memory access speed}
+\resumeItem{Placed 1st out of 24 teams in both quality of verification and codebase documentation}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Programming Languages}{: C, C++, Python, JavaScript, RISC-V Assembly} \\
+    \textbf{Hardware Description Languages}{: SystemVerilog, Verilog, VHDL} \\
+    \textbf{Software}{: Vivado, Vitis HLS, Quartus Prime, MATLAB} \\
+    \textbf{Toolchain}{: PyTorch, ROS 2, NumPy, OpenCV, ReactJS, NGINX, AWS, Git, Linux (Ubuntu), Conda, Verilator, cocotb} \\
+    \textbf{Languages}{: English (native), Cantonese (native), Mandarin Chinese (working proficiency)}
+    }}
+\end{itemize}
+
+\end{document}
