@@ -2,6 +2,7 @@
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
+% \usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{titlesec}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
@@ -57,9 +58,10 @@
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textbf{\textit{\small #3}} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
+
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
@@ -68,8 +70,10 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}] \setlength{\itemsep}{-5pt}}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeSubHeadingWorkListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingWorkListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
@@ -80,6 +84,7 @@
 
 %----------HEADING----------
 \begin{center}
+    \vspace*{-0.3in}
     {\Huge \scshape Kevin Lau} \\ \vspace{3pt}
     \small \raisebox{-0.1\height}\faMapMarker\ Cambridge ~
     \href{tel:+447311889669}{\raisebox{-0.2\height}\faPhone\  \underline{+44 7311 889669}} ~
@@ -95,57 +100,63 @@
 \resumeSubHeadingListStart
 \resumeSubheading
 {Imperial College London}{Oct 2022 -- Jun 2026}
-{MEng Electronic and Information Engineering (Computer Engineering) - \emph{Predicted 1st class honours}}{}
+{MEng Electronic and Information Engineering (Computer Engineering)}{}
+\resumeItemListStart
+\resumeItem{Predicted 1st class honours, starting penultimate year}
+\resumeItem{Modules of interest: Instruction Set Architecture and Compilers, Advanced Computer Architecture, Information Processing, Deep Learning, Embedded Systems}
+\resumeItemListEnd
 \resumeSubHeadingListEnd
+
 
 %-----------WORK EXPERIENCE-----------
 \section{Work Experience}
-\resumeSubHeadingListStart
+\resumeSubHeadingWorkListStart
 
 \resumeSubheading
-{DeepWok Lab (Imperial x Cambridge) \href{https://deepwok.github.io/}{\scalebox{0.75}\faLink}}{Jul 2024 -- ongoing}
-{3D Gaussian Splatting Quantisation and Acceleration Hardware}{}
+{3D Gaussian Splatting Quantisation and Acceleration Hardware Research}{Jul 2024 -- ongoing}
+{DeepWok Lab (Imperial x Cambridge Research Team) \href{https://deepwok.github.io/}{\scalebox{0.75}\faLink}}{}
 \resumeItemListStart
-\resumeItem{Developing custom quantised hardware for 3D Gaussian Splatting in SystemVerilog with custom cocotb testbenches}
-\resumeItem{Implemented quantisation-aware training for 3DGS using PyTorch, achieving similar PSNR benchmarks to the official CUDA implementation}
+\resumeItem{Designing quantised hardware for 3D Gaussian Splatting in \textbf{SystemVerilog} with custom \textbf{cocotb} testbenches}
+\resumeItem{Implemented quantisation-aware training for 3DGS using \textbf{PyTorch}, achieving similar PSNR benchmarks to the official \textbf{CUDA} implementation}
 \resumeItem{Applied in-house compiler MASE's custom quantisers to evaluate the best quantisation scheme for hardware design}
 \resumeItemListEnd
 
 \resumeSubheading
-{Imperial College London}{Jul -- Sept 2024}
-{University Course FPGA Module Design}{}
+{University Course FPGA Module Design}{Jul -- Sept 2024}
+{Imperial College London (Department of Electrical and Electronic Engineering)}{}
 \resumeItemListStart
 \resumeItem{Redesigned the 2nd year Information Processing module teaching content and lab practicals from scratch}
 \resumeItem{Introduced concepts of hardware-software codesign and embedded development with Verilog, C++ and Python}
-\resumeItem{Emphasized on practical skills development with the Xilinx toolchain and edge-computing applications}
+\resumeItem{Emphasized on practical skills development with the \textbf{FPGA Xilinx} toolchain and edge-computing applications}
 \resumeItemListEnd
 
 \resumeSubheading
-{Imperial College London}{Oct 2023 -- Mar 2024}
-{Undergraduate Teaching Assistant}{}
+{Undergraduate Teaching Assistant}{Oct 2023 -- Mar 2024}
+{Imperial College London (Department of Electrical and Electronic Engineering)}{}
 \resumeItemListStart
-\resumeItem{Taught Year 1 students in the EEE department for the Programming for Engineers module}
+\resumeItem{Worked with the department to provide learning support to 1st year students in Programming for Engineers module}
 \resumeItem{Guided students on learning fundamental C++ concepts and developing object-oriented programming skills}
 \resumeItemListEnd
 
 \resumeSubheading
-{DiTa Limousine Limited \href{https://ditaexpress.com/}{\scalebox{0.75}\faLink}}{Jul -- Sept 2023}
-{Full-stack Web Developer}{}
+{Full-Stack Web Developer}{Jul -- Sept 2023}
+{DiTa Limousine Limited \href{https://ditaexpress.com/}{\scalebox{0.75}\faLink}}{}
 \resumeItemListStart
 \resumeItem{Developed a responsive and interactive website using ReactJS and Framer Motion for the company website, which enhanced user engagement and contributed to a 50\% increase in new limousine service bookings}
 \resumeItem{Hosted the website on a self-managed Ubuntu Virtual Private Server, gaining experience with the Linux shell and server management using NGINX}
 \resumeItemListEnd
 
-\resumeSubHeadingListEnd
+\resumeSubHeadingWorkListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
+\enlargethispage{-20pt}
 \resumeSubHeadingListStart
 
 \resumeProjectHeading
 {\textbf{Graphics Processing Unit (TauriGPU)} \href{https://github.com/AyuubMohamud/TauriGPU}{\scalebox{0.75}\faLink} $|$ \emph{SystemVerilog, Python, GLSL}}{Jul 2024 -- ongoing}
 \resumeItemListStart
-\resumeItem{Developed an open-source programmable GPU compatible with OpenGL ES2 and Xilinx FPGAs}
+\resumeItem{Developing an open-source programmable GPU compatible with \textbf{OpenGL ES2} and \textbf{Xilinx FPGAs}}
 \resumeItem{In progress of building an LLVM backend for TauriGPU's ISA to enable GLSL compilation}
 \resumeItemListEnd
 
@@ -161,21 +172,21 @@
 {\textbf{C90 to RISC-V Compiler} \href{https://github.com/saturn691/ReaverCompiler}{\scalebox{0.75}\faLink} $|$ \emph{C++, RISC-V Assembly}}{Dec -- Mar 2024}
 \resumeItemListStart
 \resumeItem{Developed a compiler with advanced features, e.g. N-dimensional array support and efficient memory management}
-\resumeItem{Placed 1st out of 48 teams, achieving 90\% pass rate in seen and unseen test cases}
+\resumeItem{\textbf{Placed 1st out of 48 teams}, achieving 90\% pass rate in seen and unseen test cases}
 \resumeItemListEnd
 
 \resumeProjectHeading
 {\textbf{FPGA Computer Vision Acceleration for ESP32 WiFi Car Racing System} $|$ \emph{Xilinx, C++}}{Feb -- Mar 2024}
 \resumeItemListStart
 \resumeItem{Built a commercializable hardware racing game with AWS cloud backend and implemented powerups using OpenCV}
-\resumeItem{Developed hardware IPs for local OpenCV acceleration on the PYNQ-Z1 FPGA using the Xilinx toolchain}
+\resumeItem{Developed hardware IPs for local OpenCV acceleration on the \textbf{PYNQ-Z1 FPGA} using the Xilinx toolchain}
 \resumeItemListEnd
 
 \resumeProjectHeading
 {\textbf{Software-Hardware Low Latency Algorithmic Trading System with FPGA} $|$ \emph{Xilinx, Python}}{Feb 2024}
 \resumeItemListStart
 \resumeItem{Utilised FPGA to accelerate moving average indicators to identify market opening convergence opportunities using the Xilinx toolchain}
-\resumeItem{Top 5 finalist at IC Hack 24's Optiver trading challenge out of 20+ teams, invited to present trading strategy to Optiver representatives}
+\resumeItem{\textbf{Top 5 finalist} at IC Hack 24's Optiver trading challenge out of 20+ teams, invited to present trading strategy to Optiver representatives}
 \resumeItemListEnd
 
 \resumeProjectHeading
@@ -183,20 +194,32 @@
 \resumeItemListStart
 \resumeItem{Developed a single-cycle RISC-V 32I processor that runs all base instructions using SystemVerilog}
 \resumeItem{Implemented pipelining and direct-mapped cache to improve processing and memory access speed}
-\resumeItem{Placed 1st out of 24 teams in both quality of verification and codebase documentation}
+\resumeItem{\textbf{Placed 1st out of 24 teams} in both quality of verification and codebase documentation}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------SKILLS-----------
-\section{Technical Skills}
+%-----------SKILLS AND AWARDS-----------
+\section{Skills and Awards}
+
+% Technical Skills subsection
+\subsection*{\normalsize Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
     \textbf{Programming Languages}{: C, C++, Python, JavaScript, RISC-V Assembly} \\
     \textbf{Hardware Description Languages}{: SystemVerilog, Verilog, VHDL} \\
-    \textbf{Toolchain}{: CUDA, OpenGL, PyTorch, Verilator, cocotb, ROS 2, NumPy, OpenCV, ReactJS, NGINX, Git, Conda} \\
+    \textbf{Toolchain}{: CUDA, OpenGL, PyTorch, Git, Verilator, cocotb, ROS 2, NumPy, OpenCV, ReactJS, NGINX, Conda} \\
     \textbf{FPGA toolchain}{: Vivado, Vitis, Quartus Prime} \\
-    \textbf{Languages}{: English (native), Cantonese (native), Mandarin Chinese (working proficiency)}
+    \textbf{Languages}{: English (native), Cantonese (native), Mandarin Chinese (fluent)}
+    }}
+\end{itemize}
+
+% Awards subsection
+\subsection*{\normalsize Awards}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Hong Kong Scholarship for Excellence Scheme}{: Awarded title of \textbf{Hong Kong Scholar} (since 2022)} \\
+    \textbf{Diocesan Boys' School}{: Top International Baccalaureate scorer (44/45 marks), Subject prize scholarship (2022)} \\
     }}
 \end{itemize}
 
